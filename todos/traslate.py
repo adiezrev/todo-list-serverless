@@ -22,11 +22,11 @@ def get(event, context):
 
     # texto a traducir e idioma en que esta el texto
     task = result['Item']['text']
-    source_result = comprehend.detect_dominant_language(task)
+    source_result = comprehend.detect_dominant_language(Text=task)
     source = source_result['Languages'][0]['LanguageCode']
 
     # se traduce el texto de la tarea
-    task_translated = translate.translate_text(task,source,target)        
+    task_translated = translate.translate_text(Text=task, SourceLanguageCode = source, TargetLanguageCode = target)        
     result['Item']['text'] = task_translated['TranslatedText']
 
     # create a response
