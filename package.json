@@ -5,6 +5,6 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "serverless": "1.75.0",
+    "serverless": "1.75.0"
   }
 }
